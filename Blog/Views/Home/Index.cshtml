@@ -1,0 +1,13 @@
+﻿@model Blog.ViewModels.HomeViewModel
+
+<h2>@Model.Title</h2>
+
+@foreach (var post in Model.Posts)
+{
+    <div class="col-sm-8">
+        <div>
+            <h2>@post.Title</h2>
+            <h3>@post.Body</h3>
+        </div>
+    </div>
+}

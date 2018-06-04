@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "defaultDestination": "wwwroot/lib/",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@4.1.1",
+      "destination": "wwwroot/lib/bootstrap"
+    },
+    {
+      "library": "trianglify@1.2.0",
+      "destination": "wwwroot/lib/trianglify"
+    }
+  ]
+}
