@@ -12,9 +12,6 @@ namespace Blog.Models
             if (!context.Posts.Any())
             {
                 context.AddRange(
-                    new Post { Body = "This is a post", Date = new DateTime(), Title = "Test Post" },
-                    new Post { Body = "This is a post", Date = new DateTime(), Title = "Test Post" },
-                    new Post { Body = "This is a post", Date = new DateTime(), Title = "Test Post" },
                     new Post { Body = "This is a post", Date = new DateTime(), Title = "Test Post" });
 
                 context.SaveChanges();

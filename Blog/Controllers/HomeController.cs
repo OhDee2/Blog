@@ -31,5 +31,18 @@ namespace Blog.Controllers
 
             return View(homeViewModel);
         }
+
+        public IActionResult AddPost()
+        {
+            var posts = _postRepository.GetAllPosts().OrderBy(p => p.Date);
+
+            var homeViewModel = new HomeViewModel()
+            {
+                Title = "James' Blog",
+                Posts = posts.ToList()
+            };
+
+            return View(homeViewModel);
+        }
     }
 }
