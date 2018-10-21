@@ -9,5 +9,6 @@ namespace Blog.Models
     {
         IEnumerable<Post> GetAllPosts();
         Post GetPostById(int postId);
+        void AddPost(Post post);
     }
 }

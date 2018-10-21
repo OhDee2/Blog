@@ -37,5 +37,10 @@ namespace Blog.Models
         {
             return _posts.FirstOrDefault(p => p.Id == postId);
         }
+
+        public void AddPost(Post post)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

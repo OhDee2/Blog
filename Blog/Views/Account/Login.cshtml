@@ -1,0 +1,32 @@
+﻿
+@model Blog.ViewModels.LoginViewModel
+
+
+<form asp-action="Login" asp-controller="Account" method="post" class="">
+    <!-- User name -->
+    <div class="form-group">
+        <label asp-for="UserName" class="col-md-2 custom-control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+        <label asp-for="Password" class="col-md-2 custom-control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="form-group">
+        <div class="col-md-2 col-md-5">
+            <input type="submit" class="btn btn-primary" value="Login" />
+        </div>
+    </div>
+
+
+</form>

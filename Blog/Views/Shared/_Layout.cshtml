@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+<!DOCTYPE html>
+
+@inject SignInManager<IdentityUser> SignInManager
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-ie">
 <head>
@@ -9,21 +12,38 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <header class="container-fluid">
-        <h1>Header</h1>
-    </header>
+    <nav class="navbar navbar-dark navbar-expand-lg">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a asp-controller="Home" asp-action="Index" class="navbar-brand">James' Blog</a></li>
+                <li><a asp-controller="Post" asp-action="CreatePost">Create Post</a></li>
+                <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+            </ul>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <form asp-area="" asp-controller="Account" asp-action="Logout"
+                      method="post" class="navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="javascript:document.getElementById('logoutForm').submit()"></a></li>
+                     </ul>
+                </form>
+            }
+            else
+            {
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                </ul>
+            }
+        </div>
+    </nav>
 
     <div class="container-fluid">
         <div class="row">
-            <aside class="col-sm-2">
-                Col1
-            </aside>
+            <aside class="col-sm-2"></aside>
             <section class="col-sm-8">
                 @RenderBody()
             </section>
-            <aside class="col-sm-2">
-                Col3
-            </aside>
+            <aside class="col-sm-2"></aside>
         </div>
     </div>
 
